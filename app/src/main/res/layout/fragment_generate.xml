@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ScreenBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.GenerateFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        style="@style/ToolBar"
+        android:paddingStart="10dp"
+        app:title="Generate"
+        app:titleCentered="true"
+        android:paddingEnd="10dp" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/qrImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:src="@color/black"/>
+        <TextView
+            android:id="@+id/helperText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            style="@style/TextColor"
+            android:text="@string/your_code_will_be_display_here"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edQrTxt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/border"
+        android:inputType="text"
+        style="@style/TextColor"
+        android:padding="8dp"
+        android:imeOptions="actionDone"
+        android:hint="@string/enter_your_text_here"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_gen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edQrTxt"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/button"
+        android:text="@string/generate"
+        style="@style/TextColor"/>
+
+</RelativeLayout>
